@@ -4,6 +4,7 @@ import Table from 'react-bootstrap/Table'
 import Alert from 'react-bootstrap/Alert'
 import LogItem from './LogItem'
 import AddLogItem from './AddLogItem'
+import { ipcRenderer, ipcMain } from 'electron'
 
 const App = () => {
 	const [logs, setLogs] = useState([])
@@ -13,18 +14,19 @@ const App = () => {
 		variant: 'success',
 	   })
 
-	// useEffect(() => {
-	// 	ipcRenderer.send('logs:load')
+	 useEffect(() => {
+	 	ipcRenderer.send('logs:load')
 	
-	// 	ipcRenderer.on('logs:get', (e, logs) => {
-	// 	  setLogs(JSON.parse(logs))
-	// 	})
+	 	ipcRenderer.on('logs:get', (e, logs) => {
+	 	  setLogs(JSON.parse(logs))
+	 	})
 	
 	// 	ipcRenderer.on('logs:clear', () => {
 	// 	  setLogs([])
 	// 	  showAlert('Logs Cleared')
-	// 	})
-	//   }, [])
+ 	//})
+	   }, 
+	[])
 	
 	   function addItem(item) {
 		if (item.text === '' || item.user === '' || item.priority === '') {
