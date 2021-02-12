@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Table from 'react-bootstrap/Table'
 import LogItem from './LogItem'
+import AddLogItem from './AddLogItem'
 
 
 

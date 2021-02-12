@@ -12,7 +12,7 @@ Saves logs to MongoDB with priority
 ## Technology Used
 HTML, CSS, JavaScript, ReactJS, ElectronJS, MongoDB Atlas
 
-Reat Bootstrap, Moment
+React Bootstrap, Moment
 
 
 ## License
