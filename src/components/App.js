@@ -21,10 +21,10 @@ const App = () => {
 	 	  setLogs(JSON.parse(logs))
 	 	})
 	
-	// 	ipcRenderer.on('logs:clear', () => {
-	// 	  setLogs([])
-	// 	  showAlert('Logs Cleared')
- 	//})
+		ipcRenderer.on('logs:clear', () => {
+		  setLogs([])
+		  showAlert('Logs Cleared')
+ 	})
 	   }, 
 	[])
 	
@@ -44,10 +44,8 @@ const App = () => {
 	   }
 	
 	   function deleteItem(_id) {
-
-		setLogs(logs.filter((item) => item._id !== _id))
-
-	// 	ipcRenderer.send('logs:delete', _id)
+	//	setLogs(logs.filter((item) => item._id !== _id))
+	 	ipcRenderer.send('logs:delete', _id)
 	 	showAlert('Log Removed')
 	   }
 	

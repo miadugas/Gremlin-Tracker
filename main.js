@@ -12,6 +12,8 @@ let mainWindow
 
 //env check
 let isDev = false
+// Mac check
+const isMac = process.platform === 'darwin' ? true : false
 
 if (
 	process.env.NODE_ENV !== undefined &&
@@ -75,41 +77,41 @@ function createMainWindow() {
  app.on('ready', () => {
  	createMainWindow()
   
-// 	const mainMenu = Menu.buildFromTemplate(menu)
-// 	Menu.setApplicationMenu(mainMenu)
+	const mainMenu = Menu.buildFromTemplate(menu)
+	Menu.setApplicationMenu(mainMenu)
    })
   
-//   const menu = [
-// 	...(isMac ? [{ role: 'appMenu' }] : []),
-// 	{
-// 	  role: 'fileMenu',
-// 	},
-// 	{
-// 	  role: 'editMenu',
-// 	},
-// 	{
-// 	  label: 'Logs',
-// 	  submenu: [
-// 		{
-// 		  label: 'Clear Logs',
-// 		  click: () => clearLogs(),
-// 		},
-// 	  ],
-// 	},
-// 	...(isDev
-// 	  ? [
-// 		  {
-// 			label: 'Developer',
-// 			submenu: [
-// 			  { role: 'reload' },
-// 			  { role: 'forcereload' },
-// 			  { type: 'separator' },
-// 			  { role: 'toggledevtools' },
-// 			],
-// 		  },
-// 		]
-// 	  : []),
-//   ]
+   const menu = [
+ 	...(isMac ? [{ role: 'appMenu' }] : []),
+	{
+	  role: 'fileMenu',
+	},
+	{
+	  role: 'editMenu',
+	},
+	{
+	  label: 'Logs',
+	  submenu: [
+		{
+		  label: 'Clear Logs',
+		  click: () => clearLogs(),
+		},
+	  ],
+	},
+	...(isDev
+	  ? [
+		  {
+			label: 'Developer',
+			submenu: [
+			  { role: 'reload' },
+			  { role: 'forcereload' },
+			  { type: 'separator' },
+			  { role: 'toggledevtools' },
+			],
+		  },
+		]
+	  : []),
+   ]
   
   // Load logs
   ipcMain.on('logs:load', sendLogs)
@@ -125,14 +127,14 @@ function createMainWindow() {
    })
   
 // Delete log
-//   ipcMain.on('logs:delete', async (e, id) => {
-// 	try {
-// 	  await Log.findOneAndDelete({ _id: id })
-// 	  sendLogs()
-// 	} catch (err) {
-// 	  console.log(err)
-// 	}
-//   })
+   ipcMain.on('logs:delete', async (e, id) => {
+	try {
+	  await Log.findOneAndDelete({ _id: id })
+	  sendLogs()
+	} catch (err) {
+	  console.log(err)
+	}
+   })
   
 // Send log items
    async function sendLogs() {
@@ -145,14 +147,14 @@ function createMainWindow() {
    }
   
 // Clear all logs
-//   async function clearLogs() {
-// 	try {
-// 	  await Log.deleteMany({})
-// 	  mainWindow.webContents.send('logs:clear')
-// 	} catch (err) {
-// 	  console.log(err)
-// 	}
-//   }
+  async function clearLogs() {
+	try {
+	  await Log.deleteMany({})
+	  mainWindow.webContents.send('logs:clear')
+	} catch (err) {
+	  console.log(err)
+	}
+  }
 
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {

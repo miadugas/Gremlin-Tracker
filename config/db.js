@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(
-      'mongodb+srv://miad1234:<miad1234>@gremlintracker.ouxls.mongodb.net/<dbname>?retryWrites=true&w=majority',
+      'mongodb+srv://miad1234:<miad1234>@gremlintracker.ouxls.mongodb.net/gremlintrack?retryWrites=true&w=majority',
       {
         useNewUrlParser: true,
         useCreateIndex: true,
