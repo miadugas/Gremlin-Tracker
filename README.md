@@ -7,6 +7,9 @@ ReactJS/ElectronJS client app that uses a MongoDB Atlas database to keep track o
 ## Usage
 Saves logs to MongoDB with priority by using external access to MongoDB Atlas.
 
+![Main View](https://github.com/miadugas/Gremlin-Tracker/blob/main/user%20-tasks.png)
+
+![DB View](https://github.com/miadugas/Gremlin-Tracker/blob/main/user-db.png)
 
 
 ## Technology Used
