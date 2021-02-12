@@ -1,13 +1,34 @@
 import React, { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Table from 'react-bootstrap/Table'
+import LogItem from './LogItem'
+
+
 
 const App = () => {
-	return (
-		<div className='app'>
-			<h1>Gremlin Tracker</h1>
-			<p>React/Electron app that uses a MongoDB Atlas database to keep track of system gremlins and bugs for remote teams.</p>
-		</div>
+	const [logs, setLogs] = useState([])
+	
+return (
+<Container>
+      <AddLogItem addItem={addItem} />
+      {alert.show && <Alert variant={alert.variant}>{alert.message}</Alert>}
+      <Table>
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Log Text</th>
+            <th>User</th>
+            <th>Created</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {logs.map((log) => (
+            <LogItem key={log._id} log={log} deleteItem={deleteItem} />
+          ))}
+        </tbody>
+      </Table>
+	  </Container>
 	)
 }
 
