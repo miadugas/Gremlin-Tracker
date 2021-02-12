@@ -1,8 +1,8 @@
 {
-  "name": "simple-electron-react",
-  "productName": "React Electron App",
+  "name": "gremlin-tracker",
+  "productName": "Gremlin-Tracker",
   "version": "1.0.0",
-  "description": "Simple boilerplate for building Electron apps with React",
+  "description": "React/Electron app that uses a MongoDB Atlas database to keep track of system gremlins & bugs for remote teams.",
   "license": "MIT",
   "engines": {
     "node": ">=9.0.0",
@@ -21,7 +21,9 @@
     "postpackage": "electron-packager ./ --out=./release-builds"
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.4.3",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {

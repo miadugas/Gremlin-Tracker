@@ -4,6 +4,7 @@ const { app, BrowserWindow } = require('electron')
 
 let mainWindow
 
+//env check
 let isDev = false
 
 if (
@@ -18,6 +19,7 @@ function createMainWindow() {
 		width: 1100,
 		height: 800,
 		show: false,
+		backgroundColor: 'white',
 		icon: './assets/icons/icon.png',
 		webPreferences: {
 			nodeIntegration: true,
