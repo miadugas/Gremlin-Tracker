@@ -1,6 +1,6 @@
 const path = require('path')
 const url = require('url')
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, Menu } = require('electron')
 const Log = require('./models/Log')
 const connectDB = require('./config/db')
 
@@ -28,7 +28,7 @@ function createMainWindow() {
 		height: 800,
 		show: false,
 		backgroundColor: 'white',
-		icon: './assets/icons/icon.png',
+		//icon: './assets/icons/icon.png',
 		webPreferences: {
 			nodeIntegration: true,
 		},

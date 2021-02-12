@@ -2,10 +2,10 @@
 
 ## Description 
 
-React/Electron app that uses a MongoDB Atlas database to keep track of system gremlins & bugs for remote teams.
+ReactJS/ElectronJS client app that uses a MongoDB Atlas database to keep track of system gremlins & bugs for remote teams.
 
 ## Usage
-Saves logs to MongoDB with priority
+Saves logs to MongoDB with priority by using external access to MongoDB Atlas.
 
 
 

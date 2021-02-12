@@ -21,6 +21,7 @@
     "postpackage": "electron-packager ./ --out=./release-builds"
   },
   "dependencies": {
+    "@types/electron-devtools-installer": "^2.2.0",
     "bootstrap": "^4.6.0",
     "moment": "^2.29.1",
     "mongoose": "^5.11.15",
