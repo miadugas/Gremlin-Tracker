@@ -115,14 +115,14 @@ function createMainWindow() {
   ipcMain.on('logs:load', sendLogs)
   
 // Create log
-//   ipcMain.on('logs:add', async (e, item) => {
-// 	try {
-// 	  await Log.create(item)
-// 	  sendLogs()
-// 	} catch (err) {
-// 	  console.log(err)
-// 	}
-//   })
+   ipcMain.on('logs:add', async (e, item) => {
+ 	try {
+	  await Log.create(item)
+	  sendLogs()
+	} catch (err) {
+ 	  console.log(err)
+ 	}
+   })
   
 // Delete log
 //   ipcMain.on('logs:delete', async (e, id) => {
@@ -153,13 +153,6 @@ function createMainWindow() {
 // 	  console.log(err)
 // 	}
 //   }
-
-
-
-
-
-
-
 
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {

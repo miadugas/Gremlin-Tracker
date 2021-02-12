@@ -33,23 +33,19 @@ const App = () => {
 		  showAlert('Please enter all fields', 'danger')
 		  return false
 		}
-	
 
-		item._id = Math.floor(Math.random() * 90000) + 10000
-		item.created = new Date().toString()
-		setLogs([...logs, item])
+		// item._id = Math.floor(Math.random() * 90000) + 10000
+		// item.created = new Date().toString()
+		// setLogs([...logs, item])
 
-	
-	// 	ipcRenderer.send('logs:add', item)
+	 	ipcRenderer.send('logs:add', item)
 	
 	 	showAlert('Log Added')
 	   }
 	
 	   function deleteItem(_id) {
 
-
-
-		 setLogs(logs.filter((item) => item._id !== _id))
+		setLogs(logs.filter((item) => item._id !== _id))
 
 	// 	ipcRenderer.send('logs:delete', _id)
 	 	showAlert('Log Removed')
