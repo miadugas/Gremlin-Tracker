@@ -10,14 +10,14 @@ const AddLogItem = ({ addItem }) => {
   const [user, setUser] = useState('')
   const [priority, setPriority] = useState('')
 
-//   const onSubmit = (e) => {
-//     e.preventDefault()
-//     addItem({ text, user, priority })
+  const onSubmit = (e) => {
+    e.preventDefault()
+    addItem({ text, user, priority })
 
-//     setText('')
-//     setUser('')
-//     setPriority('')
-//   }
+    setText('')
+    setUser('')
+    setPriority('')
+  }
 
   return (
     <Card className='mt-5 mb-3'>

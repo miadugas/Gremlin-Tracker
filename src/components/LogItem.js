@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
 
 const LogItem = ({
-//   deleteItem,
+   deleteItem,
    log: { _id, priority, user, text, created },
  }) => {
    const setVariant = () => {
