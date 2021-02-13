@@ -9,12 +9,17 @@ Saves logs to MongoDB with priority by using external access to MongoDB Atlas.
 
 ![Main View](https://github.com/miadugas/Gremlin-Tracker/blob/main/user%20-tasks.png)
 
+<hr>
+
 ![DB View](https://github.com/miadugas/Gremlin-Tracker/blob/main/user-db.png)
+
+<hr>
 
 Packaged as .dmg for Mac install
 
 ![Install](https://github.com/miadugas/Gremlin-Tracker/blob/main/install.png)
 
+<hr>
 
 ## Technology Used
 HTML, CSS, JavaScript, ReactJS, ElectronJS, MongoDB Atlas
