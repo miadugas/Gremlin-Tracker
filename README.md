@@ -11,11 +11,18 @@ Saves logs to MongoDB with priority by using external access to MongoDB Atlas.
 
 ![DB View](https://github.com/miadugas/Gremlin-Tracker/blob/main/user-db.png)
 
+Packaged as .dmg for Mac install
+![Install](https://github.com/miadugas/Gremlin-Tracker/blob/main/install.png)
+
 
 ## Technology Used
 HTML, CSS, JavaScript, ReactJS, ElectronJS, MongoDB Atlas
 
 React Bootstrap, Moment
+
+### Final App download for Mac:
+[Download](https://drive.google.com/file/d/1nN-i4TijFGtrJksap0H0CVVsJCt1YakV/view?usp=sharing)
+
 
 
 ## License
